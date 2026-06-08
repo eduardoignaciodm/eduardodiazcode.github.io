@@ -8,11 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --verde: #00ff88;
@@ -36,7 +32,130 @@
       line-height: 1.6;
     }
 
-    /* Aquí irán los estilos de cada sección */
+    /* === NAVEGACIÓN === */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      border-bottom: 1px solid var(--borde);
+      position: sticky;
+      top: 0;
+      background: rgba(10, 15, 10, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .logo {
+      font-family: var(--font-mono);
+      color: var(--verde);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul a {
+      color: var(--texto-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--verde); }
+
+    /* === HERO === */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,255,136,0.07) 0%, transparent 70%);
+      top: 10%;
+      right: -100px;
+      pointer-events: none;
+    }
+    .hero-tag {
+      font-family: var(--font-mono);
+      color: var(--verde);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+    .hero-nombre {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .hero-nombre span { color: var(--verde); }
+    .hero-subtitulo {
+      font-size: 1.2rem;
+      color: var(--texto-dim);
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--verde);
+      color: #0a0f0a;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-primary:hover {
+      background: var(--verde-dim);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      border: 1px solid var(--borde);
+      color: var(--texto);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, transform 0.1s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--verde);
+      color: var(--verde);
+      transform: translateY(-2px);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--borde);
+    }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--verde);
+      font-family: var(--font-mono);
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--texto-dim);
+      margin-top: 0.2rem;
+    }
   </style>
 </head>
 <body>
@@ -55,32 +174,55 @@
 
   <!-- HERO -->
   <section id="hero">
-    <!-- Lo construimos en el siguiente paso -->
+    <p class="hero-tag">// data analyst · energías renovables</p>
+    <h1 class="hero-nombre">
+      Eduardo<br>
+      Ignacio <span>Díaz.</span>
+    </h1>
+    <p class="hero-subtitulo">
+      Convierto datos complejos en decisiones estratégicas.
+      Bachiller en Ingeniería de Energías Renovables con especialización
+      en Python, SQL y Power BI.
+    </p>
+    <div class="hero-btns">
+      <a href="#proyectos" class="btn-primary">Ver proyectos</a>
+      <a href="mailto:eduardoignaciodm@gmail.com" class="btn-secondary">Contactarme</a>
+      <a href="https://linkedin.com/in/eduardodiazdev" class="btn-secondary">LinkedIn</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">357K+</div>
+        <div class="stat-label">registros analizados</div>
+      </div>
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label">proyectos reales</div>
+      </div>
+      <div>
+        <div class="stat-num">5+</div>
+        <div class="stat-label">herramientas dominadas</div>
+      </div>
+    </div>
   </section>
 
   <!-- SOBRE MÍ -->
   <section id="sobre-mi">
-    <!-- Lo construimos en el siguiente paso -->
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
-    <!-- Lo construimos en el siguiente paso -->
   </section>
 
   <!-- PROYECTOS -->
   <section id="proyectos">
-    <!-- Lo construimos en el siguiente paso -->
   </section>
 
   <!-- FORMACIÓN -->
   <section id="formacion">
-    <!-- Lo construimos en el siguiente paso -->
   </section>
 
   <!-- CONTACTO -->
   <section id="contacto">
-    <!-- Lo construimos en el siguiente paso -->
   </section>
 
 </body>
