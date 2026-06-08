@@ -1,8 +1,13 @@
+image: alpine:latest
+
 pages:
   stage: deploy
   script:
-    - mkdir -p public
-    - cp -r * public/ || true
+    - mkdir -p public/css public/js
+    - cp index.html public/
+    - cp profile.jpeg public/
+    - cp css/style.css public/css/
+    - cp js/main.js public/js/
   artifacts:
     paths:
       - public
