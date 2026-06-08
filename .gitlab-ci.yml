@@ -2,15 +2,13 @@ image: alpine:latest
 
 pages:
   stage: deploy
-  variables:
-    GIT_DEPTH: 0
   script:
     - ls -la
-    - mkdir public
+    - mkdir -p public
     - cp index.html public/
-    - cp profile.jpg public/
-    - cp -r css public/
-    - cp -r js public/
+    - cp profile.jpeg public/  # Asegura que se llame igual
+    - cp -r js public/         # Copia toda la carpeta js
+    - cp -r css public/        # Si tienes carpeta css
   artifacts:
     paths:
       - public
