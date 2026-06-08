@@ -4,218 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Eduardo Díaz - Data Analyst especializado en sector energético. Python, SQL, Power BI.">
-  <title>Eduardo Díaz — Data Analyst</title>
+  <title>Eduardo Ignacio Díaz Mollocondo — Data Analyst</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --verde: #00ff88;
-      --verde-dim: #00cc6a;
-      --fondo: #0a0f0a;
-      --fondo-card: #111811;
-      --fondo-card2: #151e15;
-      --texto: #e8f5e8;
-      --texto-dim: #7a9a7a;
-      --borde: #1a2e1a;
-      --font-main: 'Space Grotesk', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--fondo);
-      color: var(--texto);
-      font-family: var(--font-main);
-      line-height: 1.6;
-    }
-
-    /* === NAVEGACIÓN === */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 4rem;
-      border-bottom: 1px solid var(--borde);
-      position: sticky;
-      top: 0;
-      background: rgba(10, 15, 10, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-    }
-    .logo {
-      font-family: var(--font-mono);
-      color: var(--verde);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-    nav ul a {
-      color: var(--texto-dim);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    nav ul a:hover { color: var(--verde); }
-
-    /* === HERO === */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-    #hero::before {
-      content: '';
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,255,136,0.07) 0%, transparent 70%);
-      top: 10%;
-      right: -100px;
-      pointer-events: none;
-    }
-    .hero-tag {
-      font-family: var(--font-mono);
-      color: var(--verde);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      letter-spacing: 2px;
-    }
-    .hero-nombre {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .hero-nombre span { color: var(--verde); }
-    .hero-subtitulo {
-      font-size: 1.2rem;
-      color: var(--texto-dim);
-      max-width: 580px;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      background: var(--verde);
-      color: #0a0f0a;
-      padding: 0.8rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .btn-primary:hover {
-      background: var(--verde-dim);
-      transform: translateY(-2px);
-    }
-    .btn-secondary {
-      border: 1px solid var(--borde);
-      color: var(--texto);
-      padding: 0.8rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: border-color 0.2s, transform 0.1s;
-    }
-    .btn-secondary:hover {
-      border-color: var(--verde);
-      color: var(--verde);
-      transform: translateY(-2px);
-    }
-    .hero-stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--borde);
-    }
-    .stat-num {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--verde);
-      font-family: var(--font-mono);
-    }
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--texto-dim);
-      margin-top: 0.2rem;
-    }
-
-    /* === SOBRE MÍ === */
-    #sobre-mi {
-      padding: 6rem 4rem;
-      border-bottom: 1px solid var(--borde);
-    }
-    .seccion-tag {
-      font-family: var(--font-mono);
-      color: var(--verde);
-      font-size: 0.8rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-    .seccion-titulo {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 3rem;
-    }
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .sobre-texto p {
-      color: var(--texto-dim);
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-    .sobre-texto p strong {
-      color: var(--texto);
-    }
-    .sobre-datos {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .dato-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.2rem;
-      background: var(--fondo-card);
-      border: 1px solid var(--borde);
-      border-radius: 6px;
-    }
-    .dato-label {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--texto-dim);
-    }
-    .dato-valor {
-      font-size: 0.9rem;
-      color: var(--texto);
-      font-weight: 500;
-    }
-    .dato-valor.verde { color: var(--verde); }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -235,8 +27,8 @@
   <section id="hero">
     <p class="hero-tag">// data analyst · energías renovables</p>
     <h1 class="hero-nombre">
-      Eduardo<br>
-      Ignacio <span>Díaz Mollocondo.</span>
+      Eduardo Ignacio<br>
+      <span>Díaz Mollocondo.</span>
     </h1>
     <p class="hero-subtitulo">
       Convierto datos complejos en decisiones estratégicas.
@@ -264,66 +56,139 @@
     </div>
   </section>
 
-<!-- SOBRE MÍ -->
-<section id="sobre-mi">
-  <p class="seccion-tag">// 01 — sobre mí</p>
-  <h2 class="seccion-titulo">¿Quién soy?</h2>
-  <div class="sobre-grid">
-    <div class="sobre-texto">
-      <p>
-        Soy <strong>Eduardo Ignacio Díaz Mollocondo</strong>, bachiller en
-        Ingeniería de Energías Renovables por la Universidad Nacional de
-        Juliaca (UNAJ) y analista de datos con experiencia práctica en
-        entornos reales.
-      </p>
-      <p>
-        Trabajé como <strong>Analista de Datos y Administrativo</strong> en
-        Cooperativa Multiservicios Reactivate Peru (2023–2024), donde construí
-        dashboards, gestioné bases de datos y produje reportes para la toma
-        de decisiones.
-      </p>
-      <p>
-        Mi diferencial es combinar el dominio técnico del <strong>sector
-        energético</strong> con herramientas modernas de análisis de datos,
-        lo que me permite generar insights accionables en un campo donde
-        pocos analistas tienen contexto real.
-      </p>
-      <p>
-        Actualmente en formación continua como <strong>Data Analyst Junior</strong>
-        en EDTEAM, profundizando en Python, SQL, Power BI, estadística y Git.
-      </p>
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi">
+    <p class="seccion-tag reveal">// 01 — sobre mí</p>
+    <h2 class="seccion-titulo reveal">¿Quién soy?</h2>
+    <div class="sobre-grid">
+      <div class="sobre-foto reveal">
+        <div class="foto-marco">
+          <img src="foto.jpg" alt="Eduardo Ignacio Díaz Mollocondo">
+        </div>
+        <p class="foto-nombre">Eduardo Ignacio Díaz M.</p>
+      </div>
+      <div class="sobre-texto reveal">
+        <p>
+          Soy <strong>Eduardo Ignacio Díaz Mollocondo</strong>, bachiller en
+          Ingeniería de Energías Renovables por la Universidad Nacional de
+          Juliaca (UNAJ) y analista de datos con experiencia práctica en
+          entornos reales.
+        </p>
+        <p>
+          Trabajé como <strong>Analista de Datos y Administrativo</strong> en
+          Cooperativa Multiservicios Reactivate Peru (2023–2024), donde construí
+          dashboards, gestioné bases de datos y produje reportes para la toma
+          de decisiones.
+        </p>
+        <p>
+          Mi diferencial es combinar el dominio técnico del <strong>sector
+          energético</strong> con herramientas modernas de análisis de datos,
+          generando insights accionables en un campo donde pocos analistas
+          tienen contexto real.
+        </p>
+        <p>
+          Actualmente en formación continua como <strong>Data Analyst Junior</strong>
+          en EDTEAM, profundizando en Python, SQL, Power BI, estadística y Git.
+        </p>
+      </div>
+      <div class="sobre-datos reveal">
+        <div class="dato-item">
+          <span class="dato-label">ubicación</span>
+          <span class="dato-valor">Juliaca, Puno — Perú</span>
+        </div>
+        <div class="dato-item">
+          <span class="dato-label">formación</span>
+          <span class="dato-valor">Ing. Energías Renovables — UNAJ</span>
+        </div>
+        <div class="dato-item">
+          <span class="dato-label">experiencia</span>
+          <span class="dato-valor">Analista de Datos · Reactivate Peru</span>
+        </div>
+        <div class="dato-item">
+          <span class="dato-label">stack principal</span>
+          <span class="dato-valor">Python · SQL · Power BI</span>
+        </div>
+        <div class="dato-item">
+          <span class="dato-label">disponibilidad</span>
+          <span class="dato-valor verde">● Buscando empleo</span>
+        </div>
+        <div class="dato-item">
+          <span class="dato-label">idiomas</span>
+          <span class="dato-valor">Español nativo · Inglés básico</span>
+        </div>
+      </div>
     </div>
-    <div class="sobre-datos">
-      <div class="dato-item">
-        <span class="dato-label">ubicación</span>
-        <span class="dato-valor">Juliaca, Puno — Perú</span>
-      </div>
-      <div class="dato-item">
-        <span class="dato-label">formación</span>
-        <span class="dato-valor">Ing. Energías Renovables — UNAJ</span>
-      </div>
-      <div class="dato-item">
-        <span class="dato-label">experiencia</span>
-        <span class="dato-valor">Analista de Datos · Reactivate Peru</span>
-      </div>
-      <div class="dato-item">
-        <span class="dato-label">stack principal</span>
-        <span class="dato-valor">Python · SQL · Power BI</span>
-      </div>
-      <div class="dato-item">
-        <span class="dato-label">disponibilidad</span>
-        <span class="dato-valor verde">● Buscando empleo</span>
-      </div>
-      <div class="dato-item">
-        <span class="dato-label">idiomas</span>
-        <span class="dato-valor">Español nativo · Inglés básico</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- SKILLS -->
   <section id="skills">
+    <p class="seccion-tag reveal">// 02 — habilidades técnicas</p>
+    <h2 class="seccion-titulo reveal">Stack tecnológico</h2>
+    <div class="skills-categorias">
+
+      <div class="skill-categoria reveal">
+        <h3>Lenguajes & Datos</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <span>Python</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+            <span>Pandas</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+            <span>NumPy</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+            <span>PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-categoria reveal">
+        <h3>Visualización & BI</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI">
+            <span>Power BI</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib">
+            <span>Matplotlib</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel">
+            <span>Excel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-categoria reveal">
+        <h3>Herramientas & Entorno</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+            <span>Git</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab">
+            <span>GitLab</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+            <span>Linux</span>
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+            <span>VS Code</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- PROYECTOS -->
@@ -338,5 +203,6 @@
   <section id="contacto">
   </section>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
