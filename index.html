@@ -156,6 +156,65 @@
       color: var(--texto-dim);
       margin-top: 0.2rem;
     }
+
+    /* === SOBRE MÍ === */
+    #sobre-mi {
+      padding: 6rem 4rem;
+      border-bottom: 1px solid var(--borde);
+    }
+    .seccion-tag {
+      font-family: var(--font-mono);
+      color: var(--verde);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .seccion-titulo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .sobre-texto p {
+      color: var(--texto-dim);
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .sobre-texto p strong {
+      color: var(--texto);
+    }
+    .sobre-datos {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .dato-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      background: var(--fondo-card);
+      border: 1px solid var(--borde);
+      border-radius: 6px;
+    }
+    .dato-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--texto-dim);
+    }
+    .dato-valor {
+      font-size: 0.9rem;
+      color: var(--texto);
+      font-weight: 500;
+    }
+    .dato-valor.verde { color: var(--verde); }
   </style>
 </head>
 <body>
@@ -205,9 +264,63 @@
     </div>
   </section>
 
-  <!-- SOBRE MÍ -->
-  <section id="sobre-mi">
-  </section>
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <p class="seccion-tag">// 01 — sobre mí</p>
+  <h2 class="seccion-titulo">¿Quién soy?</h2>
+  <div class="sobre-grid">
+    <div class="sobre-texto">
+      <p>
+        Soy <strong>Eduardo Ignacio Díaz Mollocondo</strong>, bachiller en
+        Ingeniería de Energías Renovables por la Universidad Nacional de
+        Juliaca (UNAJ) y analista de datos con experiencia práctica en
+        entornos reales.
+      </p>
+      <p>
+        Trabajé como <strong>Analista de Datos y Administrativo</strong> en
+        Cooperativa Multiservicios Reactivate Peru (2023–2024), donde construí
+        dashboards, gestioné bases de datos y produje reportes para la toma
+        de decisiones.
+      </p>
+      <p>
+        Mi diferencial es combinar el dominio técnico del <strong>sector
+        energético</strong> con herramientas modernas de análisis de datos,
+        lo que me permite generar insights accionables en un campo donde
+        pocos analistas tienen contexto real.
+      </p>
+      <p>
+        Actualmente en formación continua como <strong>Data Analyst Junior</strong>
+        en EDTEAM, profundizando en Python, SQL, Power BI, estadística y Git.
+      </p>
+    </div>
+    <div class="sobre-datos">
+      <div class="dato-item">
+        <span class="dato-label">ubicación</span>
+        <span class="dato-valor">Juliaca, Puno — Perú</span>
+      </div>
+      <div class="dato-item">
+        <span class="dato-label">formación</span>
+        <span class="dato-valor">Ing. Energías Renovables — UNAJ</span>
+      </div>
+      <div class="dato-item">
+        <span class="dato-label">experiencia</span>
+        <span class="dato-valor">Analista de Datos · Reactivate Peru</span>
+      </div>
+      <div class="dato-item">
+        <span class="dato-label">stack principal</span>
+        <span class="dato-valor">Python · SQL · Power BI</span>
+      </div>
+      <div class="dato-item">
+        <span class="dato-label">disponibilidad</span>
+        <span class="dato-valor verde">● Buscando empleo</span>
+      </div>
+      <div class="dato-item">
+        <span class="dato-label">idiomas</span>
+        <span class="dato-valor">Español nativo · Inglés básico</span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- SKILLS -->
   <section id="skills">
