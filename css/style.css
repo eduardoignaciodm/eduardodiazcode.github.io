@@ -1069,3 +1069,60 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============ CURSOS EDTEAM ============ */
+.education-courses {
+    margin: 1.5rem 0;
+}
+
+.education-courses h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.course-item:hover {
+    border-color: var(--verde);
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.course-item i {
+    font-size: 1.3rem;
+    color: var(--verde);
+    width: 24px;
+    text-align: center;
+}
+
+/* Responsive para cursos */
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
