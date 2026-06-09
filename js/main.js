@@ -1,90 +1,81 @@
-// === REVEAL AL SCROLL ===
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, i * 100);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
+// ============ DARK MODE ============
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+updateThemeIcon(savedTheme);
 
-// === TYPEWRITER EN HERO TAG ===
-const heroTag = document.querySelector('.hero-tag');
-if (heroTag) {
-  const texto = heroTag.textContent.trim();
-  heroTag.textContent = '';
-  heroTag.style.opacity = '1';
-  heroTag.style.animation = 'none';
-  let i = 0;
-  const escribir = () => {
-    if (i < texto.length) {
-      heroTag.textContent += texto[i];
-      i++;
-      setTimeout(escribir, 45);
-    }
-  };
-  setTimeout(escribir, 500);
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
 }
 
-// === CONTADORES ANIMADOS EN STATS ===
-const sufijos = { '357000': '357K+', '3': '3+', '5': '5+' };
+// ============ MENÚ MÓVIL ============
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
 
-const contarObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const valorBase = el.textContent.trim();
-      const numero = parseInt(valorBase);
-      const sufijo = sufijos[valorBase] || (valorBase + '+');
-      const esMiles = numero >= 1000;
-      let actual = 0;
-      const duracion = 1400;
-      const pasos = 60;
-      const incremento = numero / pasos;
-      let frame = 0;
+navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
-      const contador = setInterval(() => {
-        frame++;
-        actual = Math.min(Math.round(incremento * frame), numero);
-        if (esMiles) {
-          el.textContent = (actual >= 1000)
-            ? Math.round(actual / 1000) + 'K+'
-            : actual + '';
-        } else {
-          el.textContent = actual >= numero ? sufijo : actual + '';
-        }
-        if (frame >= pasos) {
-          el.textContent = sufijo;
-          clearInterval(contador);
-        }
-      }, duracion / pasos);
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
 
-      contarObserver.unobserve(el);
+// ============ NAVBAR SCROLL ============
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.style.padding = '0.5rem 0';
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+    } else {
+        navbar.style.padding = '1rem 0';
+        navbar.style.boxShadow = 'none';
     }
-  });
-}, { threshold: 0.5 });
+});
 
-document.querySelectorAll('.stat-num').forEach(el => contarObserver.observe(el));
+// ============ ANIMACIÓN SKILL BARS ============
+const skillBars = document.querySelectorAll('.skill-bar');
+const observerOptions = { threshold: 0.5 };
 
-// === NAVBAR: RESALTAR SECCIÓN ACTIVA ===
-const secciones = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav ul a');
-
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => {
-        link.classList.remove('activo');
-        if (link.getAttribute('href') === '#' + entry.target.id) {
-          link.classList.add('activo');
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.style.width;
         }
-      });
-    }
-  });
-}, { threshold: 0.4 });
+    });
+}, observerOptions);
 
-secciones.forEach(sec => navObserver.observe(sec));
+skillBars.forEach(bar => skillObserver.observe(bar));
+
+// ============ FORMULARIO ============
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('¡Gracias por tu mensaje! Te responderé pronto.');
+    contactForm.reset();
+});
+
+// ============ SMOOTH SCROLL ============
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
