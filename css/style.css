@@ -81,24 +81,7 @@ nav ul a:hover { color: var(--verde); }
 nav ul a.activo { color: var(--verde); }
 
 /* === HERO === */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 4rem;
-  position: relative;
-  overflow: hidden;
-  animation: fadeIn 1s ease;
-}
-#hero::before {
-  content: '';
-  position: absolute;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(0,255,136,0.07) 0%, transparent 70%);
-  top: 10%; right: -100px;
-  pointer-events: none;
-}
+
 .hero-tag {
   font-family: var(--font-mono);
   color: var(--verde);
@@ -347,4 +330,63 @@ nav ul a.activo { color: var(--verde); }
   font-size: 0.95rem;
   color: var(--texto);
   font-weight: 500;
+}
+
+/* === HERO DOS COLUMNAS === */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 4rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,255,136,0.06) 0%, transparent 70%);
+  top: 50%; right: -150px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.hero-contenido {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+.hero-texto {
+  display: flex;
+  flex-direction: column;
+}
+.hero-foto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+.hero-foto-marco {
+  width: 360px;
+  height: 440px;
+  border-radius: 50% / 40%;
+  border: 2px solid var(--verde);
+  overflow: hidden;
+  position: relative;
+  animation: glow-ring 3s ease-in-out infinite;
+  transition: box-shadow 0.3s;
+}
+.hero-foto-marco img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(15%);
+  transition: filter 0.4s, transform 0.4s;
+}
+.hero-foto-marco:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.04);
 }
