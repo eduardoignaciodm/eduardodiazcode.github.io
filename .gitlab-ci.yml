@@ -1,14 +1,9 @@
-image: alpine:latest
-
 pages:
   stage: deploy
   script:
-    - ls -la
-    - mkdir -p public
-    - cp index.html public/
-    - cp profile.jpeg public/  # Asegura que se llame igual
-    - cp -r js public/         # Copia toda la carpeta js
-    - cp -r css public/        # Si tienes carpeta css
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
   artifacts:
     paths:
       - public
