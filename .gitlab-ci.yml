@@ -3,9 +3,10 @@ pages:
   script:
     - mkdir .public
     - cp -r * .public
+    - rm -rf .public/.gitlab-ci.yml
     - mv .public public
   artifacts:
     paths:
       - public
-  only:
-    - main
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'

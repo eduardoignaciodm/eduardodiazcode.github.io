@@ -1,482 +1,433 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Eduardo Díaz - Analista de Datos | Python, Power BI, Excel, PostgreSQL">
-    <title>Eduardo Díaz | Analista de Datos</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eduardo Díaz — Analista de Datos</title>
+<meta name="description" content="Eduardo Ignacio Díaz Mollocondo — Analista de Datos. Python, PostgreSQL, Power BI, automatización. Ingeniero en Energías Renovables transicionando a Data Engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#inicio" class="nav-logo">Eduardo<span>.</span></a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
-                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-                <li><a href="#formacion" class="nav-link">Formación</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
-            </ul>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-        <div class="hero-container">
-            <div class="hero-content">
-                <p class="hero-greeting">Hola, soy</p>
-                <h1 class="hero-title">Eduardo Ignacio<br>Díaz Mollocondo</h1>
-                <h2 class="hero-subtitle">Analista de Datos</h2>
-                <p class="hero-description">
-                    Transformo datos en decisiones estratégicas. Especializado en análisis, 
-                    visualización y automatización de información para impulsar resultados medibles.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Contáctame
-                    </a>
-                    <a href="#proyectos" class="btn btn-secondary">
-                        <i class="fas fa-folder-open"></i> Ver proyectos
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-image-wrapper">
-                    <img src="profile.jpeg" alt="Eduardo Díaz">
-                    <div class="hero-image-glow"></div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-bar"></div>
+  <span class="loader-label">CARGANDO PERFIL</span>
+</div>
 
-    <!-- SOBRE MÍ -->
-    <section class="about" id="sobre-mi">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Conóceme</span>
-                <h2 class="section-title">Sobre mí</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Soy un <strong>analista de datos</strong> apasionado por descubrir historias 
-                        ocultas en la información. Mi trabajo consiste en tomar datos complejos y 
-                        convertirlos en <strong>insights accionables</strong> que ayuden a tomar 
-                        mejores decisiones.
-                    </p>
-                    <p>
-                        Domino herramientas como <strong>Python, Pandas y NumPy</strong> para el 
-                        procesamiento y análisis, <strong>PostgreSQL</strong> para gestión de bases 
-                        de datos, <strong>Power BI</strong> para visualizaciones interactivas, y 
-                        <strong>Excel con Power Query</strong> para automatización de reportes.
-                    </p>
-                    <p>
-                        Mi enfoque combina <strong>rigor técnico</strong> con <strong>visión 
-                        estratégica</strong>: no solo entrego números, entrego respuestas claras 
-                        que generan impacto real en los negocios.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Análisis riguroso</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Visualización clara</span>
-                        </div>
-                        <div class="highlight">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Automatización eficiente</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-cards">
-                    <div class="info-card">
-                        <i class="fas fa-database"></i>
-                        <h3>Datos</h3>
-                        <p>Procesamiento y limpieza de grandes volúmenes de información</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Análisis</h3>
-                        <p>Identificación de patrones, tendencias y oportunidades</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Insights</h3>
-                        <p>Recomendaciones basadas en evidencia para la toma de decisiones</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ NOISE / GRAIN OVERLAY ============ -->
+<div class="grain"></div>
 
-    <!-- HABILIDADES -->
-    <section class="skills" id="habilidades">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Mi stack</span>
-                <h2 class="section-title">Habilidades técnicas</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon python">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>Programación, scripting y automatización de procesos</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon pandas">
-                        <i class="fas fa-table"></i>
-                    </div>
-                    <h3>Pandas</h3>
-                    <p>Manipulación y análisis de datos estructurados</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon numpy">
-                        <i class="fas fa-square-root-variable"></i>
-                    </div>
-                    <h3>NumPy</h3>
-                    <p>Cálculo numérico y operaciones con arrays</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon postgresql">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>PostgreSQL</h3>
-                    <p>Gestión y consulta de bases de datos relacionales</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 82%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon powerbi">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Power BI</h3>
-                    <p>Dashboards interactivos y visualización de datos</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 92%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon excel">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <h3>Excel</h3>
-                    <p>Modelado, fórmulas avanzadas y tablas dinámicas</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon powerquery">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3>Power Query</h3>
-                    <p>Extracción, transformación y carga (ETL) de datos</p>
-                    <div class="skill-level">
-                        <div class="skill-bar" style="width: 87%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav-logo">ED<span class="dot">·</span>DATA</a>
+  <nav class="nav-links">
+    <a href="#about">Perfil</a>
+    <a href="#stack">Stack</a>
+    <a href="#specs">Ficha técnica</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#path">Trayectoria</a>
+    <a href="#contact" class="nav-cta">Contacto</a>
+  </nav>
+  <button class="nav-burger" id="navBurger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
-    <!-- SERVICIOS -->
-    <section class="services" id="servicios">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Qué ofrezco</span>
-                <h2 class="section-title">Servicios</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <i class="fas fa-chart-bar service-icon"></i>
-                    <h3>Análisis de Datos</h3>
-                    <p>Exploración, limpieza y análisis profundo de tus datos para descubrir patrones y oportunidades de mejora.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <i class="fas fa-tachometer-alt service-icon"></i>
-                    <h3>Dashboards Interactivos</h3>
-                    <p>Creación de tableros visuales en Power BI que permiten monitorear KPIs y métricas clave en tiempo real.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <i class="fas fa-cogs service-icon"></i>
-                    <h3>Automatización</h3>
-                    <p>Scripts en Python y flujos en Power Query para automatizar reportes recurrentes y eliminar tareas manuales.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <i class="fas fa-graduation-cap service-icon"></i>
-                    <h3>Capacitación</h3>
-                    <p>Enseñanza personalizada en herramientas de análisis de datos, desde lo básico hasta técnicas avanzadas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="nav-mobile" id="navMobile">
+  <a href="#about">Perfil</a>
+  <a href="#stack">Stack</a>
+  <a href="#specs">Ficha técnica</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#path">Trayectoria</a>
+  <a href="#contact">Contacto</a>
+</div>
 
-    <!-- PROYECTOS -->
-    <section class="projects" id="proyectos">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portafolio</span>
-                <h2 class="section-title">Proyectos</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="projects-content">
-                <div class="projects-coming-soon">
-                    <div class="coming-soon-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>¡Próximamente!</h3>
-                    <p>
-                        Estoy trabajando en proyectos emocionantes que demostrarán 
-                        mis habilidades en análisis de datos, visualización y automatización.
-                    </p>
-                    <div class="coming-soon-features">
-                        <div class="feature-tag">
-                            <i class="fas fa-database"></i>
-                            <span>Análisis de datos</span>
-                        </div>
-                        <div class="feature-tag">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Dashboards interactivos</span>
-                        </div>
-                        <div class="feature-tag">
-                            <i class="fas fa-cogs"></i>
-                            <span>Automatización</span>
-                        </div>
-                        <div class="feature-tag">
-                            <i class="fab fa-python"></i>
-                            <span>Scripts en Python</span>
-                        </div>
-                    </div>
-                    <p class="coming-soon-text">
-                        Muy pronto compartiré casos de estudio reales con resultados concretos.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="hero-line hero-line-1"></div>
+    <div class="hero-line hero-line-2"></div>
+    <div class="hero-grid"></div>
+  </div>
 
-    <!-- FORMACIÓN -->
-<section class="education" id="formacion">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Educación</span>
-            <h2 class="section-title">Formación Académica</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="education-content">
-            <!-- Universidad -->
-            <div class="education-card">
-                <div class="education-header">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="education-info">
-                        <h3>Ingeniería en Energías Renovables</h3>
-                        <p class="education-institution">Universidad Nacional de Juliaca</p>
-                        <p class="education-period">2018 - 2022</p>
-                    </div>
-                </div>
-                <p class="education-description">
-                    Formación integral en sistemas de energía renovable, eficiencia energética 
-                    y sostenibilidad. Desarrollo de habilidades analíticas, investigación aplicada 
-                    y gestión de proyectos técnicos con enfoque en soluciones energéticas limpias.
-                </p>
-                <div class="education-tags">
-                    <span class="tag">Energía Solar</span>
-                    <span class="tag">Energía Eólica</span>
-                    <span class="tag">Eficiencia Energética</span>
-                    <span class="tag">Sostenibilidad</span>
-                    <span class="tag">Gestión de Proyectos</span>
-                </div>
-            </div>
-            
-            <!-- EDteam -->
-            <div class="education-card">
-                <div class="education-header">
-                    <div class="education-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="education-info">
-                        <h3>Formación en Desarrollo y Análisis de Datos</h3>
-                        <p class="education-institution">EDteam</p>
-                        <p class="education-period">Formación continua con certificación</p>
-                    </div>
-                </div>
-                <p class="education-description">
-                    Especialización en herramientas modernas de análisis de datos, programación 
-                    y desarrollo. Todos los cursos cuentan con certificación oficial, demostrando 
-                    dominio técnico y compromiso con el aprendizaje continuo.
-                </p>
-                <div class="education-courses">
-                    <h4>Cursos Certificados:</h4>
-                    <div class="courses-grid">
-                        <div class="course-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fas fa-database"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>Power BI</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fas fa-calculator"></i>
-                            <span>DAX</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fas fa-filter"></i>
-                            <span>Power Query</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fas fa-file-excel"></i>
-                            <span>Microsoft Excel</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fas fa-terminal"></i>
-                            <span>Terminal de Comandos</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fas fa-code-branch"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="course-item">
-                            <i class="fab fa-linux"></i>
-                            <span>Linux</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="education-tags">
-                    <span class="tag">Programación</span>
-                    <span class="tag">Bases de Datos</span>
-                    <span class="tag">Business Intelligence</span>
-                    <span class="tag">Control de Versiones</span>
-                    <span class="tag">Sistemas Operativos</span>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="hero-eyebrow">
+    <span class="pulse-dot"></span>
+    DISPONIBLE PARA NUEVOS RETOS · JULIACA, PERÚ
+  </div>
+
+  <h1 class="hero-title">
+    <span class="hero-title-line" data-reveal>EDUARDO</span>
+    <span class="hero-title-line hero-title-accent" data-reveal>DÍAZ</span>
+  </h1>
+
+  <p class="hero-tagline" data-reveal>
+    Motor de datos. Chasis de ingeniería. <span class="accent">Cero ruido, pura señal.</span>
+  </p>
+
+  <div class="hero-actions" data-reveal>
+    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+    <a href="#contact" class="btn btn-ghost">Hablemos</a>
+  </div>
+
+  <div class="hero-scroll">
+    <span>DESPLÁZATE</span>
+    <div class="hero-scroll-line"></div>
+  </div>
 </section>
 
-    <!-- CONTACTO -->
-    <section class="contact" id="contacto">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Hablemos</span>
-                <h2 class="section-title">Contacto</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>¿Tienes un proyecto en mente?</h3>
-                    <p>
-                        Estoy disponible para colaboraciones, proyectos de análisis de datos 
-                        o simplemente para conversar sobre cómo transformar tus datos en valor.
-                    </p>
-                    <div class="contact-methods">
-                        <a href="mailto:eduardoignaciodm@gmail.com" class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <span>eduardoignaciodm@gmail.com</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/eduardodiazdev" target="_blank" class="contact-method">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://gitlab.com/eduardodiazcode" target="_blank" class="contact-method">
-                            <i class="fab fa-gitlab"></i>
-                            <span>GitLab</span>
-                        </a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder=" " required>
-                        <label for="name">Nombre</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder=" " required>
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" rows="5" placeholder=" " required></textarea>
-                        <label for="message">Mensaje</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Enviar mensaje
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+<!-- ============ TICKER ============ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>PYTHON</span><span class="sep">/</span>
+    <span>POSTGRESQL</span><span class="sep">/</span>
+    <span>POWER BI</span><span class="sep">/</span>
+    <span>PANDAS</span><span class="sep">/</span>
+    <span>EXCEL AVANZADO</span><span class="sep">/</span>
+    <span>GIT &amp; GITLAB</span><span class="sep">/</span>
+    <span>LINUX</span><span class="sep">/</span>
+    <span>ENERGÍAS RENOVABLES</span><span class="sep">/</span>
+    <span>PYTHON</span><span class="sep">/</span>
+    <span>POSTGRESQL</span><span class="sep">/</span>
+    <span>POWER BI</span><span class="sep">/</span>
+    <span>PANDAS</span><span class="sep">/</span>
+    <span>EXCEL AVANZADO</span><span class="sep">/</span>
+    <span>GIT &amp; GITLAB</span><span class="sep">/</span>
+    <span>LINUX</span><span class="sep">/</span>
+    <span>ENERGÍAS RENOVABLES</span><span class="sep">/</span>
+  </div>
+</div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-logo">Eduardo<span>.</span></p>
-                <div class="footer-social">
-                    <a href="https://gitlab.com/eduardodiazcode" target="_blank" aria-label="GitLab">
-                        <i class="fab fa-gitlab"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/eduardodiazdev" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:eduardoignaciodm@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-                <p class="footer-copy">
-                    © 2026 Eduardo Díaz. Todos los derechos reservados.
-                </p>
-            </div>
-        </div>
-    </footer>
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">El perfil</h2>
+  </div>
 
-    <script src="js/main.js"></script>
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <div class="about-photo">
+        <img src="assets/img/profile.jpeg" alt="Eduardo Díaz Mollocondo" loading="lazy">
+      </div>
+      <div class="about-photo-tag">EDUARDO_DM // ANALISTA</div>
+    </div>
+
+    <div class="about-copy">
+      <p class="about-lead">
+        Convierto datos crudos en decisiones. No vendo dashboards bonitos:
+        <span class="accent">entrego respuestas que mueven negocios.</span>
+      </p>
+      <p>
+        Soy Ingeniero en Energías Renovables por la Universidad Nacional de Juliaca,
+        con experiencia real como Analista de Datos en Cooperativa Multiservicios
+        Reactívate Perú, donde construí dashboards, administré bases de datos y
+        produje reportes que el equipo usaba para decidir, no para archivar.
+      </p>
+      <p>
+        Hoy estoy en transición activa hacia Data Engineering: mismo rigor analítico,
+        más ingeniería de pipelines, arquitectura de datos y herramientas cloud.
+        Mi base en energías renovables no es un dato curioso de CV — es la razón por
+        la que pienso en sistemas, eficiencia y escala antes que en gráficos sueltos.
+      </p>
+
+      <div class="about-pillars">
+        <div class="pillar">
+          <span class="pillar-mark">→</span>
+          <div>
+            <h3>Rigor técnico</h3>
+            <p>Datos limpios, consultas eficientes, código que otros pueden leer.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-mark">→</span>
+          <div>
+            <h3>Visión de ingeniería</h3>
+            <p>Vengo de diseñar sistemas energéticos: pienso en flujos, no en parches.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-mark">→</span>
+          <div>
+            <h3>Aprendizaje constante</h3>
+            <p>Formación activa en Platzi: Python, control de flujo, OOP, manejo de errores.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECS / TACÓMETRO ============ -->
+<section class="specs" id="specs">
+  <div class="section-head section-head-light">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Ficha técnica</h2>
+  </div>
+
+  <div class="specs-grid">
+    <div class="gauge-block">
+      <svg class="gauge" viewBox="0 0 240 150" id="gaugeSvg">
+        <path class="gauge-track" d="M 20 130 A 100 100 0 0 1 220 130" />
+        <path class="gauge-fill" id="gaugeFill" d="M 20 130 A 100 100 0 0 1 220 130" />
+        <line class="gauge-tick" x1="20" y1="130" x2="30" y2="115" />
+        <line class="gauge-tick" x1="45" y1="65" x2="53" y2="75" />
+        <line class="gauge-tick" x1="120" y1="30" x2="120" y2="42" />
+        <line class="gauge-tick" x1="195" y1="65" x2="187" y2="75" />
+        <line class="gauge-tick" x1="220" y1="130" x2="210" y2="115" />
+        <line class="gauge-needle" id="gaugeNeedle" x1="120" y1="130" x2="120" y2="40" />
+        <circle class="gauge-hub" cx="120" cy="130" r="7" />
+      </svg>
+      <div class="gauge-readout">
+        <span class="gauge-value" id="gaugeValue">0</span>
+        <span class="gauge-unit">% comprometido con el oficio</span>
+      </div>
+    </div>
+
+    <div class="specs-table">
+      <div class="spec-row" data-reveal>
+        <span class="spec-label">MOTOR</span>
+        <span class="spec-value">Python 3 + Pandas / NumPy</span>
+      </div>
+      <div class="spec-row" data-reveal>
+        <span class="spec-label">TRANSMISIÓN</span>
+        <span class="spec-value">PostgreSQL — JOINs, CTEs, window functions</span>
+      </div>
+      <div class="spec-row" data-reveal>
+        <span class="spec-label">PANEL DE CONTROL</span>
+        <span class="spec-value">Power BI / Looker Studio / Excel + Power Query</span>
+      </div>
+      <div class="spec-row" data-reveal>
+        <span class="spec-label">CHASIS</span>
+        <span class="spec-value">Linux (Fedora/WSL), Git &amp; GitLab, Zsh</span>
+      </div>
+      <div class="spec-row" data-reveal>
+        <span class="spec-label">ORIGEN</span>
+        <span class="spec-value">Ing. Energías Renovables — UNAJ, 2018–2022</span>
+      </div>
+      <div class="spec-row" data-reveal>
+        <span class="spec-label">EXPERIENCIA</span>
+        <span class="spec-value">Analista de Datos — Reactívate Perú, 2023–2024</span>
+      </div>
+      <div class="spec-row" data-reveal>
+        <span class="spec-label">RUTA</span>
+        <span class="spec-value">Data Analyst → Data Engineer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section class="stack" id="stack">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title">El stack</h2>
+  </div>
+
+  <div class="stack-grid">
+    <div class="stack-card" data-reveal>
+      <span class="stack-index">01</span>
+      <h3>Python</h3>
+      <p>Scripting, automatización de procesos y lógica de programación aplicada a datos.</p>
+    </div>
+    <div class="stack-card" data-reveal>
+      <span class="stack-index">02</span>
+      <h3>Pandas &amp; NumPy</h3>
+      <p>Manipulación, limpieza y cálculo numérico sobre datos estructurados.</p>
+    </div>
+    <div class="stack-card" data-reveal>
+      <span class="stack-index">03</span>
+      <h3>PostgreSQL</h3>
+      <p>Modelado, consultas avanzadas y gestión de bases de datos relacionales.</p>
+    </div>
+    <div class="stack-card" data-reveal>
+      <span class="stack-index">04</span>
+      <h3>Power BI</h3>
+      <p>Dashboards interactivos, DAX y storytelling de datos para decisiones de negocio.</p>
+    </div>
+    <div class="stack-card" data-reveal>
+      <span class="stack-index">05</span>
+      <h3>Excel + Power Query</h3>
+      <p>Modelado avanzado, tablas dinámicas y ETL ligero para reportes recurrentes.</p>
+    </div>
+    <div class="stack-card" data-reveal>
+      <span class="stack-index">06</span>
+      <h3>Git &amp; Linux</h3>
+      <p>Control de versiones, terminal y entornos Linux como flujo de trabajo diario.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects">
+  <div class="section-head section-head-light">
+    <span class="section-num">04</span>
+    <h2 class="section-title">En el garage</h2>
+  </div>
+
+  <p class="projects-intro">
+    Proyectos en construcción activa. Cada uno documentado y versionado en GitLab —
+    código real, no capturas de pantalla.
+  </p>
+
+  <div class="projects-grid">
+    <article class="project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-status">EN DESARROLLO</span>
+        <span class="project-tag">Análisis de datos</span>
+      </div>
+      <h3>Energía Renovable Global 2000–2025</h3>
+      <p>
+        Profiling y limpieza de un dataset global de Kaggle sobre métricas de energía
+        renovable. Separación de datos por país vs. agregados regionales, con
+        exportación de datasets limpios listos para análisis.
+      </p>
+      <div class="project-meta">
+        <span>Python</span><span>Pandas</span><span>Data Cleaning</span>
+      </div>
+      <a href="https://gitlab.com/eduardodiazcode" class="project-link" target="_blank" rel="noopener">
+        Ver en GitLab →
+      </a>
+    </article>
+
+    <article class="project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-status">DOCUMENTADO</span>
+        <span class="project-tag">Bases de datos</span>
+      </div>
+      <h3>PostgreSQL Elemental</h3>
+      <p>
+        Guía propia de PostgreSQL construida mientras aprendía: instalación,
+        administración con pgAdmin4 y consultas desde fundamentos hasta JOINs
+        y funciones de ventana.
+      </p>
+      <div class="project-meta">
+        <span>PostgreSQL</span><span>pgAdmin4</span><span>Documentación</span>
+      </div>
+      <a href="https://gitlab.com/eduardodiazcode/posgres-elemental" class="project-link" target="_blank" rel="noopener">
+        Ver en GitLab →
+      </a>
+    </article>
+
+    <article class="project-card" data-reveal>
+      <div class="project-card-top">
+        <span class="project-status">EN CURSO</span>
+        <span class="project-tag">Fundamentos</span>
+      </div>
+      <h3>Fundamentos de Python</h3>
+      <p>
+        Ejercicios y proyectos del curso de Python en Platzi: funciones, control
+        de flujo, manejo de errores y programación orientada a objetos.
+      </p>
+      <div class="project-meta">
+        <span>Python</span><span>OOP</span><span>Platzi</span>
+      </div>
+      <a href="https://gitlab.com/eduardodiazcode/fundamentos-python" class="project-link" target="_blank" rel="noopener">
+        Ver en GitLab →
+      </a>
+    </article>
+
+    <article class="project-card project-card-soon" data-reveal>
+      <div class="project-card-top">
+        <span class="project-status project-status-soon">PRÓXIMAMENTE</span>
+        <span class="project-tag">Tesis aplicada</span>
+      </div>
+      <h3>Potencial de Calentadores Solares en Juliaca</h3>
+      <p>
+        Evaluación del potencial de calentadores solares de agua en el sector
+        residencial de Juliaca usando datos geoespaciales y simulación Monte Carlo.
+      </p>
+      <div class="project-meta">
+        <span>Geoespacial</span><span>Monte Carlo</span><span>Energía</span>
+      </div>
+      <span class="project-link project-link-disabled">En redacción</span>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PATH / TRAYECTORIA ============ -->
+<section class="path" id="path">
+  <div class="section-head">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Trayectoria</h2>
+  </div>
+
+  <div class="path-track">
+    <div class="path-item" data-reveal>
+      <div class="path-year">2018—2022</div>
+      <div class="path-line"></div>
+      <div class="path-content">
+        <h3>Ingeniería en Energías Renovables</h3>
+        <p>Universidad Nacional de Juliaca. Formación en sistemas de energía, eficiencia y sostenibilidad, con base analítica y gestión de proyectos técnicos.</p>
+      </div>
+    </div>
+
+    <div class="path-item" data-reveal>
+      <div class="path-year">2023—2024</div>
+      <div class="path-line"></div>
+      <div class="path-content">
+        <h3>Analista de Datos</h3>
+        <p>Cooperativa Multiservicios Reactívate Perú. Dashboards, gestión de bases de datos y reportes usados para decisiones operativas reales.</p>
+      </div>
+    </div>
+
+    <div class="path-item" data-reveal>
+      <div class="path-year">2025—ACTUAL</div>
+      <div class="path-line"></div>
+      <div class="path-content">
+        <h3>Formación intensiva + búsqueda activa</h3>
+        <p>Platzi: Python, PostgreSQL, Power BI. Construcción de portafolio en GitLab, aplicaciones activas a roles de Data Analyst / BI Junior en Perú.</p>
+      </div>
+    </div>
+
+    <div class="path-item path-item-future" data-reveal>
+      <div class="path-year">SIGUIENTE</div>
+      <div class="path-line"></div>
+      <div class="path-content">
+        <h3>Data Engineer</h3>
+        <p>Pipelines, arquitectura de datos, Airflow, Spark y cloud (GCP). El siguiente cambio de marcha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <span class="section-num section-num-light">06</span>
+    <h2 class="contact-title">
+      Hablemos de <span class="accent">datos.</span>
+    </h2>
+    <p class="contact-sub">
+      Abierto a roles de Analista de Datos, BI Junior y oportunidades en Data Engineering.
+      Si tienes un problema de datos que resolver, escríbeme.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:eduardoignaciodm@gmail.com" class="contact-link">
+        <span class="contact-link-label">EMAIL</span>
+        <span class="contact-link-value">eduardoignaciodm@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/eduardodiazdev" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">LINKEDIN</span>
+        <span class="contact-link-value">/in/eduardodiazdev</span>
+      </a>
+      <a href="https://gitlab.com/eduardodiazcode" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">GITLAB</span>
+        <span class="contact-link-value">@eduardodiazcode</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>ED·DATA — Eduardo Díaz Mollocondo</span>
+  <span>© 2026. Construido con datos, café y terminal.</span>
+</footer>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,81 +1,116 @@
-// ============ DARK MODE ============
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
+// ============================================
+// ED·DATA — main.js
+// ============================================
 
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
+document.addEventListener('DOMContentLoaded', () => {
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-});
+  /* ---------- LOADER ---------- */
+  const loader = document.getElementById('loader');
+  window.setTimeout(() => {
+    loader.classList.add('hidden');
+  }, 1200);
 
-function updateThemeIcon(theme) {
-    themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-}
-
-// ============ MENÚ MÓVIL ============
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-// ============ NAVBAR SCROLL ============
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.padding = '0.5rem 0';
-        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+  /* ---------- NAV: scroll state ---------- */
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 24) {
+      nav.classList.add('scrolled');
     } else {
-        navbar.style.padding = '1rem 0';
-        navbar.style.boxShadow = 'none';
+      nav.classList.remove('scrolled');
     }
-});
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-// ============ ANIMACIÓN SKILL BARS ============
-const skillBars = document.querySelectorAll('.skill-bar');
-const observerOptions = { threshold: 0.5 };
+  /* ---------- NAV: mobile burger ---------- */
+  const burger = document.getElementById('navBurger');
+  const navMobile = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    navMobile.classList.toggle('open');
+  });
+  navMobile.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('open');
+      navMobile.classList.remove('open');
+    });
+  });
 
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  /* ---------- SCROLL REVEAL ---------- */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+
+  /* ---------- GAUGE ANIMATION (specs section) ---------- */
+  const gaugeFill = document.getElementById('gaugeFill');
+  const gaugeNeedle = document.getElementById('gaugeNeedle');
+  const gaugeValue = document.getElementById('gaugeValue');
+  const gaugeSection = document.querySelector('.specs');
+
+  const TARGET_PERCENT = 92; // nivel de compromiso/dominio mostrado
+  const CIRC = 314; // longitud aproximada del arco (stroke-dasharray)
+
+  let gaugeAnimated = false;
+
+  function animateGauge() {
+    if (gaugeAnimated) return;
+    gaugeAnimated = true;
+
+    const offset = CIRC - (CIRC * TARGET_PERCENT) / 100;
+    gaugeFill.style.strokeDashoffset = offset;
+
+    // needle rotates from -90deg (0%) to +90deg (100%) across the semicircle
+    const angle = -90 + (180 * TARGET_PERCENT) / 100;
+    gaugeNeedle.style.transform = `rotate(${angle}deg)`;
+
+    // animate the counter number
+    let current = 0;
+    const duration = 1400;
+    const stepTime = 16;
+    const steps = duration / stepTime;
+    const increment = TARGET_PERCENT / steps;
+
+    const counter = setInterval(() => {
+      current += increment;
+      if (current >= TARGET_PERCENT) {
+        current = TARGET_PERCENT;
+        clearInterval(counter);
+      }
+      gaugeValue.textContent = Math.round(current);
+    }, stepTime);
+  }
+
+  if (gaugeSection) {
+    const gaugeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.style.width;
+          animateGauge();
+          gaugeObserver.disconnect();
         }
+      });
+    }, { threshold: 0.4 });
+    gaugeObserver.observe(gaugeSection);
+  }
+
+  /* ---------- SMOOTH ANCHOR OFFSET (account for fixed nav) ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (targetId.length <= 1) return;
+      const target = document.querySelector(targetId);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 84;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
-}, observerOptions);
+  });
 
-skillBars.forEach(bar => skillObserver.observe(bar));
-
-// ============ FORMULARIO ============
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('¡Gracias por tu mensaje! Te responderé pronto.');
-    contactForm.reset();
-});
-
-// ============ SMOOTH SCROLL ============
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
 });
