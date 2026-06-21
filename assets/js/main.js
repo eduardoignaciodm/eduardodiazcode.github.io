@@ -1,5 +1,5 @@
 // ============================================
-// ED·DATA — main.js
+// Eduardo Díaz — main.js
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('loader');
   window.setTimeout(() => {
     loader.classList.add('hidden');
-  }, 1200);
+  }, 1000);
 
   /* ---------- NAV: scroll state ---------- */
   const nav = document.getElementById('nav');
@@ -49,55 +49,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealEls.forEach((el) => revealObserver.observe(el));
 
-  /* ---------- GAUGE ANIMATION (specs section) ---------- */
-  const gaugeFill = document.getElementById('gaugeFill');
-  const gaugeNeedle = document.getElementById('gaugeNeedle');
-  const gaugeValue = document.getElementById('gaugeValue');
-  const gaugeSection = document.querySelector('.specs');
+  /* ---------- ANIMATED COUNTERS (estilo Atera) ---------- */
+  const counters = document.querySelectorAll('.counter');
 
-  const TARGET_PERCENT = 92; // nivel de compromiso/dominio mostrado
-  const CIRC = 314; // longitud aproximada del arco (stroke-dasharray)
-
-  let gaugeAnimated = false;
-
-  function animateGauge() {
-    if (gaugeAnimated) return;
-    gaugeAnimated = true;
-
-    const offset = CIRC - (CIRC * TARGET_PERCENT) / 100;
-    gaugeFill.style.strokeDashoffset = offset;
-
-    // needle rotates from -90deg (0%) to +90deg (100%) across the semicircle
-    const angle = -90 + (180 * TARGET_PERCENT) / 100;
-    gaugeNeedle.style.transform = `rotate(${angle}deg)`;
-
-    // animate the counter number
-    let current = 0;
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const decimalDisplay = el.dataset.decimal; // optional: show a different final string (e.g. "2025")
     const duration = 1400;
     const stepTime = 16;
     const steps = duration / stepTime;
-    const increment = TARGET_PERCENT / steps;
+    const increment = target / steps;
+    let current = 0;
 
-    const counter = setInterval(() => {
+    const timer = setInterval(() => {
       current += increment;
-      if (current >= TARGET_PERCENT) {
-        current = TARGET_PERCENT;
-        clearInterval(counter);
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+        el.textContent = decimalDisplay ? decimalDisplay : Math.round(current);
+      } else {
+        el.textContent = Math.round(current);
       }
-      gaugeValue.textContent = Math.round(current);
     }, stepTime);
   }
 
-  if (gaugeSection) {
-    const gaugeObserver = new IntersectionObserver((entries) => {
+  if (counters.length) {
+    const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          animateGauge();
-          gaugeObserver.disconnect();
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.4 });
-    gaugeObserver.observe(gaugeSection);
+    }, { threshold: 0.5 });
+
+    counters.forEach((el) => counterObserver.observe(el));
   }
 
   /* ---------- SMOOTH ANCHOR OFFSET (account for fixed nav) ---------- */

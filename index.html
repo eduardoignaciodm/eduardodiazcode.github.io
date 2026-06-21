@@ -4,30 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eduardo Díaz — Analista de Datos</title>
-<meta name="description" content="Eduardo Ignacio Díaz Mollocondo — Analista de Datos. Python, PostgreSQL, Power BI, automatización. Ingeniero en Energías Renovables transicionando a Data Engineering.">
+<meta name="description" content="Eduardo Díaz Mollocondo — Analista de Datos. Python, PostgreSQL, Power BI, automatización. Ingeniero en Energías Renovables transicionando a Data Engineering.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <!-- ============ LOADER ============ -->
 <div class="loader" id="loader">
-  <div class="loader-bar"></div>
-  <span class="loader-label">CARGANDO PERFIL</span>
+  <div class="loader-mark">ED</div>
+  <div class="loader-bar"><span></span></div>
 </div>
-
-<!-- ============ NOISE / GRAIN OVERLAY ============ -->
-<div class="grain"></div>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <a href="#top" class="nav-logo">ED<span class="dot">·</span>DATA</a>
+  <a href="#top" class="nav-logo">
+    <span class="nav-logo-mark"></span>
+    Eduardo Díaz
+  </a>
   <nav class="nav-links">
     <a href="#about">Perfil</a>
     <a href="#stack">Stack</a>
-    <a href="#specs">Ficha técnica</a>
+    <a href="#metrics">En números</a>
     <a href="#projects">Proyectos</a>
     <a href="#path">Trayectoria</a>
     <a href="#contact" class="nav-cta">Contacto</a>
@@ -40,7 +40,7 @@
 <div class="nav-mobile" id="navMobile">
   <a href="#about">Perfil</a>
   <a href="#stack">Stack</a>
-  <a href="#specs">Ficha técnica</a>
+  <a href="#metrics">En números</a>
   <a href="#projects">Proyectos</a>
   <a href="#path">Trayectoria</a>
   <a href="#contact">Contacto</a>
@@ -49,28 +49,31 @@
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="hero-bg">
-    <div class="hero-line hero-line-1"></div>
-    <div class="hero-line hero-line-2"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
     <div class="hero-grid"></div>
   </div>
 
-  <div class="hero-eyebrow">
-    <span class="pulse-dot"></span>
-    DISPONIBLE PARA NUEVOS RETOS · JULIACA, PERÚ
-  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="pulse-dot"></span>
+      DISPONIBLE PARA NUEVOS RETOS · JULIACA, PERÚ
+    </div>
 
-  <h1 class="hero-title">
-    <span class="hero-title-line" data-reveal>EDUARDO</span>
-    <span class="hero-title-line hero-title-accent" data-reveal>DÍAZ</span>
-  </h1>
+    <h1 class="hero-title" data-reveal>
+      Convierto datos en
+      <span class="hero-title-gradient">decisiones claras</span>
+    </h1>
 
-  <p class="hero-tagline" data-reveal>
-    Motor de datos. Chasis de ingeniería. <span class="accent">Cero ruido, pura señal.</span>
-  </p>
+    <p class="hero-tagline" data-reveal>
+      Analista de Datos con base en ingeniería. Python, SQL y Power BI al servicio
+      de negocios que necesitan ver lo que sus datos ya saben.
+    </p>
 
-  <div class="hero-actions" data-reveal>
-    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-    <a href="#contact" class="btn btn-ghost">Hablemos</a>
+    <div class="hero-actions" data-reveal>
+      <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+      <a href="#contact" class="btn btn-ghost">Hablemos</a>
+    </div>
   </div>
 
   <div class="hero-scroll">
@@ -79,78 +82,60 @@
   </div>
 </section>
 
-<!-- ============ TICKER ============ -->
-<div class="ticker">
-  <div class="ticker-track">
-    <span>PYTHON</span><span class="sep">/</span>
-    <span>POSTGRESQL</span><span class="sep">/</span>
-    <span>POWER BI</span><span class="sep">/</span>
-    <span>PANDAS</span><span class="sep">/</span>
-    <span>EXCEL AVANZADO</span><span class="sep">/</span>
-    <span>GIT &amp; GITLAB</span><span class="sep">/</span>
-    <span>LINUX</span><span class="sep">/</span>
-    <span>ENERGÍAS RENOVABLES</span><span class="sep">/</span>
-    <span>PYTHON</span><span class="sep">/</span>
-    <span>POSTGRESQL</span><span class="sep">/</span>
-    <span>POWER BI</span><span class="sep">/</span>
-    <span>PANDAS</span><span class="sep">/</span>
-    <span>EXCEL AVANZADO</span><span class="sep">/</span>
-    <span>GIT &amp; GITLAB</span><span class="sep">/</span>
-    <span>LINUX</span><span class="sep">/</span>
-    <span>ENERGÍAS RENOVABLES</span><span class="sep">/</span>
-  </div>
-</div>
-
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
   <div class="section-head">
-    <span class="section-num">01</span>
-    <h2 class="section-title">El perfil</h2>
+    <span class="section-eyebrow">Perfil</span>
+    <h2 class="section-title">Quién soy</h2>
   </div>
 
   <div class="about-grid">
-    <div class="about-photo-wrap">
+    <div class="about-photo-wrap" data-reveal>
       <div class="about-photo">
         <img src="assets/img/profile.jpeg" alt="Eduardo Díaz Mollocondo" loading="lazy">
       </div>
-      <div class="about-photo-tag">EDUARDO_DM // ANALISTA</div>
     </div>
 
     <div class="about-copy">
-      <p class="about-lead">
-        Convierto datos crudos en decisiones. No vendo dashboards bonitos:
-        <span class="accent">entrego respuestas que mueven negocios.</span>
+      <p class="about-lead" data-reveal>
+        No vendo dashboards bonitos: <span class="grad-text">entrego respuestas que mueven negocios.</span>
       </p>
-      <p>
+      <p data-reveal>
         Soy Ingeniero en Energías Renovables por la Universidad Nacional de Juliaca,
         con experiencia real como Analista de Datos en Cooperativa Multiservicios
         Reactívate Perú, donde construí dashboards, administré bases de datos y
         produje reportes que el equipo usaba para decidir, no para archivar.
       </p>
-      <p>
+      <p data-reveal>
         Hoy estoy en transición activa hacia Data Engineering: mismo rigor analítico,
-        más ingeniería de pipelines, arquitectura de datos y herramientas cloud.
-        Mi base en energías renovables no es un dato curioso de CV — es la razón por
-        la que pienso en sistemas, eficiencia y escala antes que en gráficos sueltos.
+        más ingeniería de pipelines, arquitectura de datos y herramientas cloud. Mi
+        base en energías renovables no es un dato curioso de CV — es la razón por la
+        que pienso en sistemas y eficiencia antes que en gráficos sueltos.
       </p>
 
       <div class="about-pillars">
-        <div class="pillar">
-          <span class="pillar-mark">→</span>
+        <div class="pillar" data-reveal>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <div>
             <h3>Rigor técnico</h3>
             <p>Datos limpios, consultas eficientes, código que otros pueden leer.</p>
           </div>
         </div>
-        <div class="pillar">
-          <span class="pillar-mark">→</span>
+        <div class="pillar" data-reveal>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <div>
             <h3>Visión de ingeniería</h3>
             <p>Vengo de diseñar sistemas energéticos: pienso en flujos, no en parches.</p>
           </div>
         </div>
-        <div class="pillar">
-          <span class="pillar-mark">→</span>
+        <div class="pillar" data-reveal>
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
           <div>
             <h3>Aprendizaje constante</h3>
             <p>Formación activa en Platzi: Python, control de flujo, OOP, manejo de errores.</p>
@@ -161,122 +146,118 @@
   </div>
 </section>
 
-<!-- ============ SPECS / TACÓMETRO ============ -->
-<section class="specs" id="specs">
-  <div class="section-head section-head-light">
-    <span class="section-num">02</span>
-    <h2 class="section-title">Ficha técnica</h2>
-  </div>
-
-  <div class="specs-grid">
-    <div class="gauge-block">
-      <svg class="gauge" viewBox="0 0 240 150" id="gaugeSvg">
-        <path class="gauge-track" d="M 20 130 A 100 100 0 0 1 220 130" />
-        <path class="gauge-fill" id="gaugeFill" d="M 20 130 A 100 100 0 0 1 220 130" />
-        <line class="gauge-tick" x1="20" y1="130" x2="30" y2="115" />
-        <line class="gauge-tick" x1="45" y1="65" x2="53" y2="75" />
-        <line class="gauge-tick" x1="120" y1="30" x2="120" y2="42" />
-        <line class="gauge-tick" x1="195" y1="65" x2="187" y2="75" />
-        <line class="gauge-tick" x1="220" y1="130" x2="210" y2="115" />
-        <line class="gauge-needle" id="gaugeNeedle" x1="120" y1="130" x2="120" y2="40" />
-        <circle class="gauge-hub" cx="120" cy="130" r="7" />
-      </svg>
-      <div class="gauge-readout">
-        <span class="gauge-value" id="gaugeValue">0</span>
-        <span class="gauge-unit">% comprometido con el oficio</span>
-      </div>
-    </div>
-
-    <div class="specs-table">
-      <div class="spec-row" data-reveal>
-        <span class="spec-label">MOTOR</span>
-        <span class="spec-value">Python 3 + Pandas / NumPy</span>
-      </div>
-      <div class="spec-row" data-reveal>
-        <span class="spec-label">TRANSMISIÓN</span>
-        <span class="spec-value">PostgreSQL — JOINs, CTEs, window functions</span>
-      </div>
-      <div class="spec-row" data-reveal>
-        <span class="spec-label">PANEL DE CONTROL</span>
-        <span class="spec-value">Power BI / Looker Studio / Excel + Power Query</span>
-      </div>
-      <div class="spec-row" data-reveal>
-        <span class="spec-label">CHASIS</span>
-        <span class="spec-value">Linux (Fedora/WSL), Git &amp; GitLab, Zsh</span>
-      </div>
-      <div class="spec-row" data-reveal>
-        <span class="spec-label">ORIGEN</span>
-        <span class="spec-value">Ing. Energías Renovables — UNAJ, 2018–2022</span>
-      </div>
-      <div class="spec-row" data-reveal>
-        <span class="spec-label">EXPERIENCIA</span>
-        <span class="spec-value">Analista de Datos — Reactívate Perú, 2023–2024</span>
-      </div>
-      <div class="spec-row" data-reveal>
-        <span class="spec-label">RUTA</span>
-        <span class="spec-value">Data Analyst → Data Engineer</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ STACK ============ -->
+<!-- ============ STACK con logos reales ============ -->
 <section class="stack" id="stack">
   <div class="section-head">
-    <span class="section-num">03</span>
+    <span class="section-eyebrow">Herramientas</span>
     <h2 class="section-title">El stack</h2>
+    <p class="section-sub">Las herramientas que uso todos los días, no las que solo menciono en el CV.</p>
   </div>
 
   <div class="stack-grid">
     <div class="stack-card" data-reveal>
-      <span class="stack-index">01</span>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/python/3776AB" alt="Python" loading="lazy">
       <h3>Python</h3>
-      <p>Scripting, automatización de procesos y lógica de programación aplicada a datos.</p>
+      <p>Scripting, automatización y lógica de programación aplicada a datos.</p>
     </div>
     <div class="stack-card" data-reveal>
-      <span class="stack-index">02</span>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/pandas/150458" alt="Pandas" loading="lazy">
       <h3>Pandas &amp; NumPy</h3>
       <p>Manipulación, limpieza y cálculo numérico sobre datos estructurados.</p>
     </div>
     <div class="stack-card" data-reveal>
-      <span class="stack-index">03</span>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL" loading="lazy">
       <h3>PostgreSQL</h3>
       <p>Modelado, consultas avanzadas y gestión de bases de datos relacionales.</p>
     </div>
     <div class="stack-card" data-reveal>
-      <span class="stack-index">04</span>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/powerbi/F2C811" alt="Power BI" loading="lazy">
       <h3>Power BI</h3>
       <p>Dashboards interactivos, DAX y storytelling de datos para decisiones de negocio.</p>
     </div>
     <div class="stack-card" data-reveal>
-      <span class="stack-index">05</span>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel" loading="lazy">
       <h3>Excel + Power Query</h3>
       <p>Modelado avanzado, tablas dinámicas y ETL ligero para reportes recurrentes.</p>
     </div>
     <div class="stack-card" data-reveal>
-      <span class="stack-index">06</span>
-      <h3>Git &amp; Linux</h3>
-      <p>Control de versiones, terminal y entornos Linux como flujo de trabajo diario.</p>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/git/F05032" alt="Git" loading="lazy">
+      <h3>Git &amp; GitLab</h3>
+      <p>Control de versiones, ramas y flujo de trabajo colaborativo.</p>
+    </div>
+    <div class="stack-card" data-reveal>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/linux/FCC624" alt="Linux" loading="lazy">
+      <h3>Linux</h3>
+      <p>Terminal, Fedora/WSL y entornos de desarrollo como flujo de trabajo diario.</p>
+    </div>
+    <div class="stack-card" data-reveal>
+      <img class="stack-logo" src="https://cdn.simpleicons.org/looker/4285F4" alt="Looker Studio" loading="lazy">
+      <h3>Looker Studio</h3>
+      <p>Dashboards conectados directo a fuentes de datos en la nube.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METRICS (estilo Atera, contadores animados) ============ -->
+<section class="metrics" id="metrics">
+  <div class="metrics-bg-glow"></div>
+  <div class="section-head">
+    <span class="section-eyebrow">En números</span>
+    <h2 class="section-title">Lo que respalda el perfil</h2>
+    <p class="section-sub">Cifras reales de mi camino hasta ahora — la base sobre la que sigo construyendo.</p>
+  </div>
+
+  <div class="metrics-grid">
+    <div class="metric-card" data-reveal>
+      <div class="metric-icon">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="5" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="12" width="7" height="9" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="7" height="5" rx="1" stroke="currentColor" stroke-width="2"/></svg>
+      </div>
+      <div class="metric-value"><span class="counter" data-target="3">0</span><span class="metric-plus">+</span></div>
+      <div class="metric-label">Repositorios activos</div>
+      <p>Proyectos documentados y versionados públicamente en GitLab.</p>
+    </div>
+
+    <div class="metric-card" data-reveal>
+      <div class="metric-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 14l3-3 3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="metric-value"><span class="counter" data-target="1">0</span></div>
+      <div class="metric-label">Año de experiencia aplicada</div>
+      <p>Como Analista de Datos en Cooperativa Reactívate Perú (2023–2024).</p>
+    </div>
+
+    <div class="metric-card" data-reveal>
+      <div class="metric-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="metric-value"><span class="counter" data-target="25" data-decimal="2025">2025</span></div>
+      <div class="metric-label">Dataset global procesado</div>
+      <p>Métricas de energía renovable a nivel mundial, limpiadas y separadas por país.</p>
+    </div>
+
+    <div class="metric-card" data-reveal>
+      <div class="metric-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="metric-value"><span class="counter" data-target="2">0</span></div>
+      <div class="metric-label">Disciplinas combinadas</div>
+      <p>Ingeniería energética + análisis de datos. Una combinación poco común.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ PROJECTS ============ -->
 <section class="projects" id="projects">
-  <div class="section-head section-head-light">
-    <span class="section-num">04</span>
-    <h2 class="section-title">En el garage</h2>
+  <div class="section-head">
+    <span class="section-eyebrow">Trabajo real</span>
+    <h2 class="section-title">Proyectos</h2>
+    <p class="section-sub">Código versionado en GitLab — no capturas de pantalla.</p>
   </div>
-
-  <p class="projects-intro">
-    Proyectos en construcción activa. Cada uno documentado y versionado en GitLab —
-    código real, no capturas de pantalla.
-  </p>
 
   <div class="projects-grid">
     <article class="project-card" data-reveal>
       <div class="project-card-top">
-        <span class="project-status">EN DESARROLLO</span>
+        <span class="project-status">En desarrollo</span>
         <span class="project-tag">Análisis de datos</span>
       </div>
       <h3>Energía Renovable Global 2000–2025</h3>
@@ -289,13 +270,14 @@
         <span>Python</span><span>Pandas</span><span>Data Cleaning</span>
       </div>
       <a href="https://gitlab.com/eduardodiazcode" class="project-link" target="_blank" rel="noopener">
-        Ver en GitLab →
+        Ver en GitLab
+        <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M7 17L17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </article>
 
     <article class="project-card" data-reveal>
       <div class="project-card-top">
-        <span class="project-status">DOCUMENTADO</span>
+        <span class="project-status">Documentado</span>
         <span class="project-tag">Bases de datos</span>
       </div>
       <h3>PostgreSQL Elemental</h3>
@@ -308,13 +290,14 @@
         <span>PostgreSQL</span><span>pgAdmin4</span><span>Documentación</span>
       </div>
       <a href="https://gitlab.com/eduardodiazcode/posgres-elemental" class="project-link" target="_blank" rel="noopener">
-        Ver en GitLab →
+        Ver en GitLab
+        <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M7 17L17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </article>
 
     <article class="project-card" data-reveal>
       <div class="project-card-top">
-        <span class="project-status">EN CURSO</span>
+        <span class="project-status">En curso</span>
         <span class="project-tag">Fundamentos</span>
       </div>
       <h3>Fundamentos de Python</h3>
@@ -326,13 +309,14 @@
         <span>Python</span><span>OOP</span><span>Platzi</span>
       </div>
       <a href="https://gitlab.com/eduardodiazcode/fundamentos-python" class="project-link" target="_blank" rel="noopener">
-        Ver en GitLab →
+        Ver en GitLab
+        <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M7 17L17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </article>
 
     <article class="project-card project-card-soon" data-reveal>
       <div class="project-card-top">
-        <span class="project-status project-status-soon">PRÓXIMAMENTE</span>
+        <span class="project-status project-status-soon">Próximamente</span>
         <span class="project-tag">Tesis aplicada</span>
       </div>
       <h3>Potencial de Calentadores Solares en Juliaca</h3>
@@ -351,14 +335,14 @@
 <!-- ============ PATH / TRAYECTORIA ============ -->
 <section class="path" id="path">
   <div class="section-head">
-    <span class="section-num">05</span>
+    <span class="section-eyebrow">Camino</span>
     <h2 class="section-title">Trayectoria</h2>
   </div>
 
   <div class="path-track">
     <div class="path-item" data-reveal>
+      <div class="path-dot"></div>
       <div class="path-year">2018—2022</div>
-      <div class="path-line"></div>
       <div class="path-content">
         <h3>Ingeniería en Energías Renovables</h3>
         <p>Universidad Nacional de Juliaca. Formación en sistemas de energía, eficiencia y sostenibilidad, con base analítica y gestión de proyectos técnicos.</p>
@@ -366,8 +350,8 @@
     </div>
 
     <div class="path-item" data-reveal>
+      <div class="path-dot"></div>
       <div class="path-year">2023—2024</div>
-      <div class="path-line"></div>
       <div class="path-content">
         <h3>Analista de Datos</h3>
         <p>Cooperativa Multiservicios Reactívate Perú. Dashboards, gestión de bases de datos y reportes usados para decisiones operativas reales.</p>
@@ -375,8 +359,8 @@
     </div>
 
     <div class="path-item" data-reveal>
-      <div class="path-year">2025—ACTUAL</div>
-      <div class="path-line"></div>
+      <div class="path-dot"></div>
+      <div class="path-year">2025—Actual</div>
       <div class="path-content">
         <h3>Formación intensiva + búsqueda activa</h3>
         <p>Platzi: Python, PostgreSQL, Power BI. Construcción de portafolio en GitLab, aplicaciones activas a roles de Data Analyst / BI Junior en Perú.</p>
@@ -384,11 +368,11 @@
     </div>
 
     <div class="path-item path-item-future" data-reveal>
-      <div class="path-year">SIGUIENTE</div>
-      <div class="path-line"></div>
+      <div class="path-dot path-dot-future"></div>
+      <div class="path-year">Siguiente</div>
       <div class="path-content">
         <h3>Data Engineer</h3>
-        <p>Pipelines, arquitectura de datos, Airflow, Spark y cloud (GCP). El siguiente cambio de marcha.</p>
+        <p>Pipelines, arquitectura de datos, Airflow, Spark y cloud (GCP). El siguiente paso del camino.</p>
       </div>
     </div>
   </div>
@@ -396,10 +380,11 @@
 
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
+  <div class="contact-bg-glow"></div>
   <div class="contact-inner">
-    <span class="section-num section-num-light">06</span>
+    <span class="section-eyebrow">Contacto</span>
     <h2 class="contact-title">
-      Hablemos de <span class="accent">datos.</span>
+      Hablemos de <span class="grad-text">datos.</span>
     </h2>
     <p class="contact-sub">
       Abierto a roles de Analista de Datos, BI Junior y oportunidades en Data Engineering.
@@ -408,23 +393,38 @@
 
     <div class="contact-links">
       <a href="mailto:eduardoignaciodm@gmail.com" class="contact-link">
-        <span class="contact-link-label">EMAIL</span>
-        <span class="contact-link-value">eduardoignaciodm@gmail.com</span>
+        <div class="contact-link-icon">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-value">eduardoignaciodm@gmail.com</span>
+        </div>
       </a>
       <a href="https://www.linkedin.com/in/eduardodiazdev" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">LINKEDIN</span>
-        <span class="contact-link-value">/in/eduardodiazdev</span>
+        <div class="contact-link-icon">
+          <img src="https://cdn.simpleicons.org/linkedin/22D3EE" alt="" width="20" height="20">
+        </div>
+        <div>
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-value">/in/eduardodiazdev</span>
+        </div>
       </a>
       <a href="https://gitlab.com/eduardodiazcode" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">GITLAB</span>
-        <span class="contact-link-value">@eduardodiazcode</span>
+        <div class="contact-link-icon">
+          <img src="https://cdn.simpleicons.org/gitlab/22D3EE" alt="" width="20" height="20">
+        </div>
+        <div>
+          <span class="contact-link-label">GitLab</span>
+          <span class="contact-link-value">@eduardodiazcode</span>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <span>ED·DATA — Eduardo Díaz Mollocondo</span>
+  <span>Eduardo Díaz Mollocondo — Analista de Datos</span>
   <span>© 2026. Construido con datos, café y terminal.</span>
 </footer>
 
