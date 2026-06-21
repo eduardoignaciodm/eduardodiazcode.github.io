@@ -2,7 +2,7 @@
 
 Portafolio personal de **Eduardo Ignacio Díaz Mollocondo**, Analista de Datos en transición hacia Data Engineering.
 
-🔗 **Demo en vivo:** `https://eduardodiazcode.gitlab.io/`
+🔗 **Demo en vivo:** `https://eduardodiazcode.github.io/`
 
 ## Sobre el diseño
 
@@ -15,7 +15,6 @@ No se usó ningún asset, logo, imagen ni texto de ninguna marca — solo el len
 ```
 portfolio/
 ├── index.html              # Estructura y contenido de todas las secciones
-├── .gitlab-ci.yml          # Configuración de despliegue para GitLab Pages
 ├── assets/
 │   ├── css/
 │   │   └── style.css       # Sistema de diseño completo (tokens, layout, animaciones)
